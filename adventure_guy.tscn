@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dyxucsw1fyvty"]
+
+[ext_resource type="Script" uid="uid://bp4whrfr4qwe6" path="res://adventure_guy.gd" id="1_1awco"]
+[ext_resource type="Texture2D" uid="uid://gxeasgr52c8n" path="res://icon.svg" id="1_w4tax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1awco"]
+size = Vector2(128.5, 129)
+
+[node name="adventure guy" type="CharacterBody2D" unique_id=2085984474]
+script = ExtResource("1_1awco")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=619949338]
+texture = ExtResource("1_w4tax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105879259]
+position = Vector2(0.75, 1.5)
+shape = SubResource("RectangleShape2D_1awco")
