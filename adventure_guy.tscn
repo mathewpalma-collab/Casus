@@ -7,6 +7,7 @@
 size = Vector2(128.5, 129)
 
 [node name="adventure guy" type="CharacterBody2D" unique_id=2085984474]
+position = Vector2(345, 351)
 script = ExtResource("1_1awco")
 metadata/_edit_group_ = true
 
