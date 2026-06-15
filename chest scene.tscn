@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cq57mxxfdprc7"]
+
+[ext_resource type="Texture2D" uid="uid://c51jrwn5ffko1" path="res://sprites/tiles.png" id="1_ucdpy"]
+[ext_resource type="Script" uid="uid://bddifv28l1dxl" path="res://chest_scene.gd" id="1_wpl1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpl1m"]
+size = Vector2(14, 12.5)
+
+[sub_resource type="Animation" id="Animation_3d7u2"]
+resource_name = "Chest_animation"
+length = 1.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2almy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvbse"]
+_data = {
+&"Chest_animation": SubResource("Animation_3d7u2"),
+&"RESET": SubResource("Animation_2almy")
+}
+
+[node name="Chest" type="StaticBody2D" unique_id=1354758726]
+position = Vector2(420, 310)
+scale = Vector2(4, 4)
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_wpl1m")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=759015246]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_wpl1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=619958741]
+texture = ExtResource("1_ucdpy")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0.97553396, 32.040985, 29.339712, 16.500221)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=231967242]
+libraries/ = SubResource("AnimationLibrary_jvbse")

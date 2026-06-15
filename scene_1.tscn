@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://x4j73vk7s61n"]
 
+[ext_resource type="PackedScene" uid="uid://dyxucsw1fyvty" path="res://adventure_guy.tscn" id="1_3sd7o"]
+[ext_resource type="PackedScene" uid="uid://by57qpbel8lvp" path="res://node_2d.tscn" id="2_3xosi"]
+[ext_resource type="PackedScene" uid="uid://cq57mxxfdprc7" path="res://chest scene.tscn" id="3_1abo5"]
+
 [node name="scene 1" type="Node2D" unique_id=1066255286]
+
+[node name="background" parent="." unique_id=1182995552 instance=ExtResource("2_3xosi")]
+
+[node name="adventure guy" parent="." unique_id=2085984474 instance=ExtResource("1_3sd7o")]
+position = Vector2(212, 259)
+
+[node name="Chest" parent="." unique_id=1354758726 instance=ExtResource("3_1abo5")]
+position = Vector2(552, 243)

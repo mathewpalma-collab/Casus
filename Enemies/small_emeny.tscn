@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cb84htl7ynf4s"]
+
+[ext_resource type="Script" uid="uid://bvyhf2xie7kla" path="res://scripes/small_emeny.gd" id="1_holvy"]
+[ext_resource type="Texture2D" uid="uid://gxeasgr52c8n" path="res://icon.svg" id="1_tmikk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_holvy"]
+size = Vector2(130, 122)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddheq"]
+radius = 610.55383
+
+[node name="Small_enemy" type="CharacterBody2D" unique_id=1245346292]
+position = Vector2(2, -1)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_holvy")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275785337]
+texture = ExtResource("1_tmikk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046512994]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_holvy")
+
+[node name="zone" type="Area2D" parent="." unique_id=1972984941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone" unique_id=1067320664]
+shape = SubResource("CircleShape2D_ddheq")
+
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
