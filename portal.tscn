@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef3v5"]
 size = Vector2(131, 128)
 
-[node name="Area2D" type="Area2D" unique_id=2110349502]
-position = Vector2(164, 121)
+[node name="portal" type="Area2D" unique_id=2110349502]
+position = Vector2(618, 298)
+collision_mask = 0
 script = ExtResource("1_ef3v5")
 metadata/_edit_group_ = true
 

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxucsw1fyvty" path="res://adventure_guy.tscn" id="1_3sd7o"]
 [ext_resource type="PackedScene" uid="uid://by57qpbel8lvp" path="res://node_2d.tscn" id="2_3xosi"]
 [ext_resource type="PackedScene" uid="uid://cq57mxxfdprc7" path="res://chest scene.tscn" id="3_1abo5"]
+[ext_resource type="PackedScene" uid="uid://chvo3k0phqbb5" path="res://portal.tscn" id="4_knagl"]
 
 [node name="scene 1" type="Node2D" unique_id=1066255286]
 
@@ -12,4 +13,8 @@
 position = Vector2(212, 259)
 
 [node name="Chest" parent="." unique_id=1354758726 instance=ExtResource("3_1abo5")]
-position = Vector2(552, 243)
+position = Vector2(553, 227)
+
+[node name="portal" parent="." unique_id=2110349502 instance=ExtResource("4_knagl")]
+position = Vector2(813, 445)
+collision_mask = 1

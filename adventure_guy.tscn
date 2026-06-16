@@ -10,11 +10,11 @@ size = Vector2(128.5, 129)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1awco"]
 radius = 130.75168
 
-[node name="adventure guy" type="CharacterBody2D" unique_id=2085984474]
+[node name="adventur  guy" type="CharacterBody2D" unique_id=2085984474]
 position = Vector2(222, 219)
 scale = Vector2(0.5, 0.5)
-collision_layer = 0
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_1awco")
 metadata/_edit_group_ = true
 

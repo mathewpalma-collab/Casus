@@ -46,3 +46,4 @@ theme_override_font_sizes/font_size = 30
 text = "Settings"
 
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Setting Button" to="." method="_on_setting_button_pressed"]
