@@ -3,12 +3,32 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 var last_direction: Vector2 = Vector2.RIGHT
+var is_attacking: bool= false
+var hitbox_offset: Vector2
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sword_sound: AudioStreamPlayer2D = $Swordsound
+@onready var hitbox: Area2D = $hitbox
+
+
+func _ready() -> void:
+	hitbox_offset = hitbox.position
+
+
 
 func _physics_process(delta: float) -> void:
+	hitbox.monitoring = false
+	
+	if Input.is_action_just_pressed("attack") and not is_attacking :
+		attack()
+	
+	if is_attacking:
+		velocity = Vector2.ZERO
+		return
+	
+	
 	process_movement()
-	process_animation()
 	move_and_slide()
 	
 	
@@ -23,15 +43,18 @@ func process_movement()-> void:
 	if direction != Vector2.ZERO:
 		velocity = direction * SPEED
 		last_direction = direction
+		update_hitbox_offset()
 	else:
-		velocity = Vector2
+		velocity = Vector2.ZERO
+		
+		
 		
 
 	velocity = direction * SPEED
 	
 	play_animation(direction)
 	
-func play_animation(dir: vector2) -> void:
+func play_animation(dir: Vector2) -> void:
 	if dir.x != 0:
 		animated_sprite_2d.flip_h = dir.x < 0
 		animated_sprite_2d.play("walk_right")
@@ -39,6 +62,8 @@ func play_animation(dir: vector2) -> void:
 		animated_sprite_2d.play("walk_up")
 	elif dir. y > 0:
 		animated_sprite_2d.play("walk_down")
+	
+		
 
 	
 	
@@ -51,5 +76,38 @@ func play_animation(dir: vector2) -> void:
 	
 	
 	# Attacking code 
+func attack() -> void:
+	is_attacking = true
+	hitbox.monitoring = true 
+	sword_sound.play()
+	play_animation(last_direction)
+
+		
 
 	
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_attacking:
+		is_attacking = false
+		
+		
+func update_hitbox_offset() ->void:
+	var x := hitbox_offset.x
+	var y := hitbox_offset.y
+	
+	match last_direction:
+		Vector2.LEFT:
+			hitbox.position = Vector2(-x, y)
+		Vector2.RIGHT:
+			hitbox.position = Vector2(x, y)
+		Vector2.UP:
+			hitbox.position = Vector2(x, -y)
+		Vector2.DOWN:
+			hitbox.position = Vector2(x, y)
+		
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if is_attacking and body.name.begins_with("small_enemy"):
+		print("hit")

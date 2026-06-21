@@ -1,27 +1,144 @@
 [gd_scene format=3 uid="uid://cb84htl7ynf4s"]
 
 [ext_resource type="Script" uid="uid://bvyhf2xie7kla" path="res://scripes/small_emeny.gd" id="1_holvy"]
-[ext_resource type="Texture2D" uid="uid://gxeasgr52c8n" path="res://icon.svg" id="1_tmikk"]
+[ext_resource type="Texture2D" uid="uid://dg5epa0wlfj6x" path="res://sprites/Farm RPG FREE 16x16 - Tiny Asset Pack/Farm Animals/Male Cow Brown.png" id="2_holvy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddheq"]
+atlas = ExtResource("2_holvy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4782k"]
+atlas = ExtResource("2_holvy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_752pj"]
+atlas = ExtResource("2_holvy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iag0"]
+atlas = ExtResource("2_holvy")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb468"]
+atlas = ExtResource("2_holvy")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1le"]
+atlas = ExtResource("2_holvy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lv3p"]
+atlas = ExtResource("2_holvy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wicyf"]
+atlas = ExtResource("2_holvy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmodt"]
+atlas = ExtResource("2_holvy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahvrm"]
+atlas = ExtResource("2_holvy")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp56k"]
+atlas = ExtResource("2_holvy")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23mk6"]
+atlas = ExtResource("2_holvy")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6cd2"]
+atlas = ExtResource("2_holvy")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qaopy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddheq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4782k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_752pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iag0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb468")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lv3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wicyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmodt")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahvrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp56k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23mk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6cd2")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_holvy"]
-size = Vector2(130, 122)
+size = Vector2(130, 155)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddheq"]
 radius = 610.55383
 
 [node name="Small_enemy" type="CharacterBody2D" unique_id=1245346292]
-position = Vector2(2, -1)
+position = Vector2(3, -12)
 scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_holvy")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275785337]
-texture = ExtResource("1_tmikk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1178236471]
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_qaopy")
+animation = &"walk_right"
+frame_progress = 0.10363079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046512994]
-position = Vector2(-1, 0)
+position = Vector2(-13, 16.5)
 shape = SubResource("RectangleShape2D_holvy")
 
 [node name="zone" type="Area2D" parent="." unique_id=1972984941]
