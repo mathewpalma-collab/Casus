@@ -251,19 +251,32 @@ sources/1 = SubResource("TileSetAtlasSource_5kosl")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbj5q"]
 texture = ExtResource("2_lfjln")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4173155, -8, 8, -8, 8, 8, -3.057598, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.6978817, -4.8362703, 0.122196436, -2.6978817, -1.6187286, 2.6978817, -1.7985859, 6.4749146, 2.8777409, 8, 6.2950554, -8, 6.2950554)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.2374573, -8, 3.4173164, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4173155, -8, 3.2374573, -8, 3.4173164, 8, -3.057598, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4173155, -8, 3.2374573, -8, 3.4173164, 8, -3.057598, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4173155, -8, 8, -8, 8, 8, -3.057598, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6.2950554, -8, 6.115198)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.5971737, -8, 3.4173164, 6.2950554, -8, 6.115198)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4173155, -8, 8, -8, 8, 6.115198, -3.2374573, 5.935339)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.5971737, -8, 3.4173164, 6.2950554, -8, 6.115198)
 1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.2374573, -8, 3.5971737, -8, 3.4173164, 6.2950554, -3.057598, 6.115198)
 2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.2374573, -8, 3.5971737, -8, 3.4173164, 6.2950554, -3.057598, 6.115198)
 
 [sub_resource type="TileSet" id="TileSet_1husr"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tbj5q")
 
 [node name="Temple scene" type="Node2D" unique_id=1443849001]

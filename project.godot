@@ -11,14 +11,9 @@ config_version=5
 [application]
 
 config/name="Lets make a game"
-run/main_scene="uid://x4j73vk7s61n"
+run/main_scene="uid://chm0d3ywnknka"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
 
 [input]
 

@@ -250,7 +250,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1awco"]
-size = Vector2(92, 166)
+size = Vector2(98, 92)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1awco"]
 radius = 130.75168
@@ -278,7 +278,7 @@ stream = ExtResource("4_adrtj")
 pitch_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105879259]
-position = Vector2(12, 1)
+position = Vector2(9, 38)
 shape = SubResource("RectangleShape2D_1awco")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1561068222]
